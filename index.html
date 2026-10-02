@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdventureWorks Power BI Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app-container">
+
+    <!-- ==================== LEFT SIDEBAR ==================== -->
+    <div class="sidebar">
+        <div class="sidebar-icon back" id="back-home" title="Back/Home">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="19 12H5"></polyline><polyline points="12 19l-7-7"></polyline><polyline points="12 19l-7-7" transform="rotate(0 12 12)"></polyline><polyline points="12 5l-7 7" transform="rotate(0 12 12)"></polyline></svg>
+        </div>
+        <div class="sidebar-icon filter-toggle" id="filter-toggle" title="Filters">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 12h-4l-3-8H9l-3 8H2"/>
+                <path d="M5 12l3-8h8l3 8"/>
+                <path d="M9 12v6c0 1 .5 2 1 2h4c.5 0 1-.5 1-2v-6"/>
+            </svg>
+        </div>
+        <div class="sidebar-icon active" data-page="page-executive" title="Executive Dashboard">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 3v18h18"/><path d="M9 13l3-3 3 3"/><path d="M9 7l3 3 3-3"/>
+            </svg>
+        </div>
+        <div class="sidebar-icon" data-page="page-map" title="Map Visualization">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="11" r="8"/><path d="M12 11c0-2.21-.72-4.2-2-5.84"/><path d="M12 11c0-2.21.72-4.2 2-5.84"/><path d="M12 11c0 2.21-.72 4.2-2 5.84"/><path d="M12 11c0 2.21.72 4.2 2 5.84"/>
+            </svg>
+        </div>
+        <div class="sidebar-icon" data-page="page-product" title="Product Dashboard">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-8-5-8 5a2 2 0 0 0-1 1.73v8c0 .93.34 1.84.95 2.55l8 7 8-7c.61-.71.95-1.62.95-2.55z"/>
+                <path d="M12 12V3m0 0l7 4m-7-4l-7 4"/>
+            </svg>
+        </div>
+        <div class="sidebar-icon" data-page="page-customer" title="Customer Dashboard">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-3-3.87"/><path d="M9 21v-2a4 4 0 0 1 3-3.87"/><path d="M12 19a7 7 0 1 0 0-14 7 7 0 0 0 0 14z"/>
+                <path d="M1 15l6-6 4 4 8-8"/>
+            </svg>
+        </div>
+        <div class="sidebar-icon" data-page="page-tooltip" title="Manual Tooltip">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/>
+            </svg>
+        </div>
+        <div class="sidebar-icon" data-page="page-financial-nav" title="Financial Report">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 7v10c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2H5a2 2 0 0 1-2-2z"/><path d="M8 5V3c0-1.1.9-2 2-2h4a2 2 0 0 1 2 2v2"/><path d="M8 4h8"/>
+            </svg>
+        </div>
+    </div>
+
+    <!-- ==================== FILTER PANEL ==================== -->
+    <div class="filter-overlay" id="filter-overlay"></div>
+    <div class="filter-panel" id="filter-panel">
+        <div class="filter-header">
+            <div class="filter-title">Filters</div>
+            <button class="filter-close" id="filter-close">×</button>
+        </div>
+        <div class="filter-section" id="filter-year-section">
+            <h3>Year</h3>
+            <div class="checkbox-list"></div>
+        </div>
+        <div class="filter-section" id="filter-continent-section">
+            <h3>Continent</h3>
+            <div class="checkbox-list"></div>
+        </div>
+        <div class="filter-section" id="filter-empty-note" style="display:none;">
+            <p style="color:#8a8a8a;font-size:12px;margin:0;">No filters apply to this page.</p>
+        </div>
+        <div class="filter-actions">
+            <button class="btn btn-primary" id="filter-apply">Apply</button>
+            <button class="btn btn-secondary" id="filter-clear">Clear</button>
+        </div>
+    </div>
+
+    <!-- ==================== PAGE CONTAINER ==================== -->
+    <div class="page-container">
+
+        <!-- ==================== PAGE 1: EXECUTIVE DASHBOARD ==================== -->
+        <section class="page-section active" id="page-executive">
+            <div class="page-header">
+                <div class="logo"><span class="logo-icon">📊</span> AdventureWorks</div>
+                <div class="header-kpis" id="executive-header-kpis"></div>
+            </div>
+
+            <!-- Revenue Trending line chart -->
+            <div class="chart-row">
+                <div class="chart-card executive" id="chart-revenue-trending">
+                    <div class="chart-title">Revenue Trending</div>
+                    <div class="chart-wrapper">
+                        <canvas id="revenueTrendingChart"></canvas>
+                    </div>
+                    <div class="date-slider-container">
+                        <div class="slider-label">
+                            <span>Jan 2020</span>
+                            <span>Mid 2022</span>
+                        </div>
+                        <input type="range" class="date-slider" id="revenueSlider" min="0" max="29" step="1" value="29">
+                        <div class="date-slider-range">
+                            <input type="range" class="date-slider" id="revenueStart" min="0" max="29" step="1" value="0">
+                            <input type="range" class="date-slider" id="revenueEnd" min="0" max="29" step="1" value="29">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order by Category horizontal bar -->
+                <div class="chart-card executive" id="chart-category-orders">
+                    <div class="chart-title">Order by Category</div>
+                    <div class="chart-wrapper">
+                        <canvas id="categoryOrdersChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Monthly KPI sparkline cards + Product type cards -->
+            <div class="chart-row">
+                <div class="chart-card executive" id="chart-monthly-kpis">
+                    <div class="chart-title">Monthly Metrics</div>
+                    <div class="chart-wrapper">
+                        <canvas id="monthlyKpiChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-card" id="card-most-ordered">
+                    <div class="chart-title">Most Ordered Product Type</div>
+                    <div style="text-align:center; padding-top:20px;">
+                        <div class="type-value" style="font-size:28px; font-weight:700; color:var(--accent-cyan); margin-bottom:10px;">Tires and Tubes</div>
+                        <div style="font-size:13px; color:var(--text-secondary);">Highest ordered product category</div>
+                    </div>
+                </div>
+
+                <div class="chart-card" id="card-most-returned">
+                    <div class="chart-title">Most Returned Product Type</div>
+                    <div style="text-align:center; padding-top:20px;">
+                        <div class="type-value" style="font-size:28px; font-weight:700; color:var(--accent-cyan); margin-bottom:10px;">Shorts</div>
+                        <div style="font-size:13px; color:var(--text-secondary);">Highest return rate product category</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Top 10 Products table -->
+            <div class="chart-card executive" id="table-top-products">
+                <div class="chart-title">Top 10 Products</div>
+                <div class="chart-wrapper">
+                    <table class="dashboard-table">
+                        <thead>
+                            <tr><th>Product</th><th>Orders</th><th>Revenue</th><th>Return %</th></tr>
+                        </thead>
+                        <tbody id="top-products-body"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== PAGE 2: MAP VISUALIZATION ==================== -->
+        <section class="page-section" id="page-map">
+            <div class="page-header">
+                <div class="logo"><span class="logo-icon">🌍</span> Map Visualization</div>
+            </div>
+            <div class="chart-card">
+                <div class="chart-title">Market Map</div>
+                <div class="map-buttons" id="map-filters">
+                    <button class="map-btn active" data-region="all">Select all</button>
+                    <button class="map-btn" data-region="Europe">Europe</button>
+                    <button class="map-btn" data-region="North America">North America</button>
+                    <button class="map-btn" data-region="Pacific">Pacific</button>
+                </div>
+                <div class="world-map" id="world-map"></div>
+            </div>
+        </section>
+
+        <!-- ==================== PAGE 3: PRODUCT DASHBOARD ==================== -->
+        <section class="page-section" id="page-product">
+            <div class="page-header">
+                <div class="logo"><span class="logo-icon">📦</span> Product Dashboard <span style="font-size:14px; font-weight:400; color:var(--text-secondary);">- Patch Kit/8 Patches</span></div>
+                <div class="header-kpis" id="product-header-kpis"></div>
+            </div>
+
+            <!-- Gauges row -->
+            <div class="chart-row">
+                <div class="chart-card" id="gauge-order">
+                    <div class="chart-title">Monthly Order vs Target</div>
+                    <div class="gauge-container">
+                        <div class="gauge">
+                            <div class="gauge-background"></div>
+                            <div class="gauge-progress" id="gauge-order-progress"></div>
+                            <div class="gauge-value">
+                                <div class="value" id="gauge-order-value">265</div>
+                                <div class="label">0 / 319</div>
+                            </div>
+                        </div>
+                        <div class="value-row"><span class="min-val">0</span><span class="max-val">319</span></div>
+                    </div>
+                </div>
+
+                <div class="chart-card" id="gauge-revenue">
+                    <div class="chart-title">Monthly Revenue vs Target</div>
+                    <div class="gauge-container">
+                        <div class="gauge">
+                            <div class="gauge-background"></div>
+                            <div class="gauge-progress" id="gauge-revenue-progress"></div>
+                            <div class="gauge-value">
+                                <div class="value" id="gauge-revenue-value">$1,225</div>
+                                <div class="label">0 / $1,494</div>
+                            </div>
+                        </div>
+                        <div class="value-row"><span class="min-val">0</span><span class="max-val">$1,494</span></div>
+                    </div>
+                </div>
+
+                <div class="chart-card" id="gauge-profit">
+                    <div class="chart-title">Monthly Profit vs Target</div>
+                    <div class="gauge-container">
+                        <div class="gauge">
+                            <div class="gauge-background"></div>
+                            <div class="gauge-progress" id="gauge-profit-progress"></div>
+                            <div class="gauge-value">
+                                <div class="value" id="gauge-profit-value">$767</div>
+                                <div class="label">0 / $935</div>
+                            </div>
+                        </div>
+                        <div class="value-row"><span class="min-val">0</span><span class="max-val">$935</span></div>
+                    </div>
+                </div>
+
+                <!-- Metric selection checkboxes -->
+                <div class="chart-card" style="min-width: 180px;">
+                    <div class="chart-title">Metrics</div>
+                    <div class="checkbox-group">
+                        <div class="checkbox-list">
+                            <label class="checkbox-item"><input type="checkbox" class="metric-check" value="Order" checked> Order</label>
+                            <label class="checkbox-item"><input type="checkbox" class="metric-check" value="Profit" checked> Profit</label>
+                            <label class="checkbox-item"><input type="checkbox" class="metric-check" value="Revenue" checked> Revenue</label>
+                            <label class="checkbox-item"><input type="checkbox" class="metric-check" value="Returns"> Returns</label>
+                            <label class="checkbox-item"><input type="checkbox" class="metric-check" value="Return Rate"> Return Rate</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profit / Adjusted Profit line chart + Orders area chart -->
+            <div class="chart-row">
+                <div class="chart-card" style="background-color: var(--bg-card);">
+                    <div class="chart-title">Total profit / Adjusted Profit</div>
+                    <div class="chart-wrapper">
+                        <canvas id="profitChart" style="height:250px;"></canvas>
+                    </div>
+                    <div class="date-slider-container">
+                        <div class="slider-label"><span>Jul 2021</span><span>May 2022</span></div>
+                        <input type="range" class="date-slider" id="profitSlider" min="0" max="45" step="1" value="45">
+                    </div>
+                    <div class="whatif-container">
+                        <div class="whatif-label">What-if adjustment: <span id="whatif-value">0.00</span></div>
+                        <input type="range" class="date-slider" id="whatIfSlider" min="0" max="100" step="1" value="0">
+                    </div>
+                </div>
+
+                <div class="chart-card" style="background-color: var(--bg-card);">
+                    <div class="chart-title">Orders</div>
+                    <div class="chart-wrapper">
+                        <canvas id="ordersAreaChart" style="height:250px;"></canvas>
+                    </div>
+                    <div class="date-slider-container">
+                        <div class="slider-label"><span>Jul 2021</span><span>May 2022</span></div>
+                        <input type="range" class="date-slider" id="ordersSlider" min="0" max="45" step="1" value="45">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== PAGE 4: CUSTOMER DASHBOARD ==================== -->
+        <section class="page-section" id="page-customer">
+            <div class="page-header">
+                <div class="logo"><span class="logo-icon">👥</span> Customer Dashboard</div>
+                <div class="header-kpis" id="customer-header-kpis"></div>
+            </div>
+
+            <!-- KPI cards -->
+            <div class="chart-row" id="customer-kpis"></div>
+
+            <!-- Donut charts row -->
+            <div class="chart-row">
+                <div class="chart-card" id="donut-income">
+                    <div class="chart-title">Orders by Income</div>
+                    <div class="chart-wrapper">
+                        <canvas id="incomeDonutChart"></canvas>
+                    </div>
+                    <div class="donut-legend" id="income-legend"></div>
+                </div>
+
+                <div class="chart-card" id="donut-occupation">
+                    <div class="chart-title">Orders by Occupation</div>
+                    <div class="chart-wrapper">
+                        <canvas id="occupationDonutChart"></canvas>
+                    </div>
+                    <div class="donut-legend" id="occupation-legend"></div>
+                </div>
+            </div>
+
+            <!-- Revenue per customer line chart + Top Customer card -->
+            <div class="chart-row">
+                <div class="chart-card" style="background-color: var(--bg-card); flex: 2;">
+                    <div class="chart-title">Revenue Per Customer Trend</div>
+                    <div class="chart-wrapper">
+                        <canvas id="revenuePerCustomerChart"></canvas>
+                    </div>
+                    <div class="date-slider-container">
+                        <div class="slider-label"><span>Jan 2021</span><span>Apr 2022</span></div>
+                        <input type="range" class="date-slider" id="customerSlider" min="0" max="15" step="1" value="15">
+                    </div>
+                </div>
+
+                <div class="chart-card" id="top-customer-card">
+                    <div class="chart-title">Top Customer (by Revenue)</div>
+                    <div style="text-align:center; padding-top:30px;">
+                        <div style="font-size:24px; font-weight:700; color:var(--accent-cyan);">Mr. Maurice Shan</div>
+                        <div style="font-size:28px; font-weight:700;color:var(--text-primary); margin:8px 0;">$12.4K</div>
+                        <div style="font-size:14px; color:var(--text-secondary);">Orders: 6</div>
+                    </div>
+                    <div class="date-slider-container">
+                        <div class="whatif-label">Year Range: <span id="year-range-value">2021 - 2022</span></div>
+                        <input type="range" class="date-slider" id="yearRangeSlider" min="2021" max="2022" step="1" value="2022">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Year range -->
+            <div class="chart-row">
+                <div class="chart-card" style="flex:0 0 100%;">
+                    <div class="chart-title">Year Filter: <span id="year-display">2021 - 2022</span></div>
+                </div>
+            </div>
+
+            <!-- Top 100 Customers table -->
+            <div class="chart-card" id="table-top-customers">
+                <div class="chart-title">Top 100 Customers</div>
+                <div class="chart-wrapper">
+                    <table class="dashboard-table">
+                        <thead>
+                            <tr><th>#</th><th>Customer Key</th><th>Name</th><th>Total Order</th><th>Revenue</th></tr>
+                        </thead>
+                        <tbody id="top-customers-body"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== PAGE 5: MANUAL TOOLTIP ==================== -->
+        <section class="page-section" id="page-tooltip">
+            <div class="page-header">
+                <div class="logo"><span class="logo-icon">🔍</span> Manual Tooltip</div>
+            </div>
+            <div class="chart-card" style="background-color: var(--bg-card);">
+                <div class="chart-title">Orders by Subcategory (Hover for details)</div>
+                <div class="chart-wrapper">
+                    <canvas id="subcategoryBarChart"></canvas>
+                    <div id="manual-tooltip" class="manual-tooltip">
+                        <div class="tooltip-row"><span class="tooltip-label">Revenue</span><span class="tooltip-value">$24,914,587</span></div>
+                        <div class="tooltip-row"><span class="tooltip-label">Total profit</span><span class="tooltip-value">$10,457,715</span></div>
+                        <div class="tooltip-row"><span class="tooltip-label">Total order</span><span class="tooltip-value">25,164</span></div>
+                        <div class="tooltip-row"><span class="tooltip-label">Total returns</span><span class="tooltip-value">1,809</span></div>
+                        <div class="tooltip-row"><span class="tooltip-label">Return Rate</span><span class="tooltip-value">2.17%</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== PAGE 6: FINANCIAL NAVIGATION ==================== -->
+        <section class="page-section" id="page-financial-nav">
+            <div class="financial-page">
+                <div class="financial-nav">
+                    <h1>Financial Report Navigation</h1>
+                    <p>Select a report to view detailed financial information</p>
+                </div>
+                <div class="financial-tiles" id="financial-tiles"></div>
+            </div>
+        </section>
+
+        <!-- ============== Financial Sub-pages ============== -->
+        <!-- Income Statement -->
+        <section class="financial-subpage" id="financial-income-statement">
+            <div class="financial-page">
+                <button class="financial-back" id="back-to-nav-1">← Back to Navigation</button>
+                <h2 style="color:#fff; font-size:22px; margin-bottom:20px;">Income Statement</h2>
+                <div class="year-buttons" id="is-year-buttons"></div>
+                <div class="chart-row">
+                    <div class="chart-card" style="flex:1; background-color: var(--financial-navy); border-color: rgba(255,255,255,0.1);">
+                        <div class="chart-title" style="color:#fff;">Income Statement</div>
+                        <div class="chart-wrapper">
+                            <table class="financial-table" id="is-table"></table>
+                        </div>
+                    </div>
+                    <div class="chart-card" style="flex:0 0 400px; background-color: var(--financial-navy); border-color: rgba(255,255,255,0.1);">
+                        <div class="chart-title" style="color:#fff;">Waterfall</div>
+                        <canvas id="is-waterfall" style="height:250px;"></canvas>
+                    </div>
+                </div>
+                <div class="chart-row">
+                    <div class="chart-card" style="flex:1; background-color: var(--financial-navy); border-color: rgba(255,255,255,0.1);">
+                        <div class="chart-title" style="color:#fff;">TY vs PY %</div>
+                        <canvas id="is-tyvsbar" style="height:250px;"></canvas>
+                    </div>
+                    <div class="chart-card" style="flex:1; background-color: var(--financial-navy); border-color: rgba(255,255,255,0.1);">
+                        <div class="chart-title" style="color:#fff;">Monthly Revenue by Channel</div>
+                        <canvas id="is-monthly-revenue" style="height:250px;"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Financial Details -->
+        <section class="financial-subpage" id="financial-details">
+            <div class="financial-page">
+                <button class="financial-back" id="back-to-nav-2">← Back to Navigation</button>
+                <h2 style="color:#fff; font-size:22px; margin-bottom:20px;">Financial Details</h2>
+                <div class="toggle-buttons" id="fd-toggles">
+                    <button class="toggle-btn active" data-view="Actuals">Actuals</button>
+                    <button class="toggle-btn" data-view="vs Last Year">vs Last Year</button>
+                    <button class="toggle-btn" data-view="% to Revenue">% to Revenue</button>
+                </div>
+                <div class="year-buttons" id="fd-year-buttons"></div>
+                <div class="chart-row">
+                    <div class="chart-card" style="flex:1; background-color: var(--financial-navy); border-color: rgba(255,255,255,0.1);">
+                        <div class="chart-title" style="color:#fff;">Quarterly Details Matrix</div>
+                        <div class="chart-wrapper">
+                            <table class="financial-table" id="fd-matrix"></table>
+                        </div>
+                    </div>
+                    <div style="flex:0 0 300px; display:flex; flex-direction:column; gap:16px;">
+                        <div class="chart-card" style="background-color: var(--financial-navy); border-color: rgba(255,255,255,0.1);">
+                            <div class="chart-title" style="color:#fff; font-size:13px;">Revenue by Channel</div>
+                            <canvas id="fd-chart1"></canvas>
+                        </div>
+                        <div class="chart-card" style="background-color: var(--financial-navy); border-color: rgba(255,255,255,0.1);">
+                            <div class="chart-title" style="color:#fff; font-size:13px;">COGS by Category</div>
+                            <canvas id="fd-chart2"></canvas>
+                        </div>
+                        <div class="chart-card" style="background-color: var(--financial-navy); border-color: rgba(255,255,255,0.1);">
+                            <div class="chart-title" style="color:#fff; font-size:13px;">Net Income</div>
+                            <canvas id="fd-chart3"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Balance Sheet -->
+        <section class="financial-subpage" id="financial-balance-sheet">
+            <div class="financial-page">
+                <button class="financial-back" id="back-to-nav-3">← Back to Navigation</button>
+                <h2 style="color:#fff; font-size:22px; margin-bottom:20px;">Balance Sheet</h2>
+                <div class="year-buttons" id="bs-year-buttons"></div>
+                <div class="chart-row">
+                    <div class="chart-card" style="flex:1; background-color: var(--financial-navy); border-color: rgba(255,255,255,0.1);">
+                        <div class="chart-title" style="color:#fff;">Balance Sheet</div>
+                        <div class="chart-wrapper">
+                            <table class="financial-table" id="bs-table"></table>
+                        </div>
+                    </div>
+                    <div class="chart-card" style="flex:0 0 350px; background-color: var(--financial-navy); border-color: rgba(255,255,255,0.1);">
+                        <div class="chart-title" style="color:#fff;">Financial Ratios</div>
+                        <div class="chart-wrapper">
+                            <table class="ratios-table" id="bs-ratios"></table>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-row">
+                    <div class="chart-card" style="flex:1; background-color: var(--financial-navy); border-color: rgba(255,255,255,0.1);">
+                        <div class="chart-title" style="color:#fff;">Assets Waterfall</div>
+                        <canvas id="bs-waterfall-assets" style="height:250px;"></canvas>
+                    </div>
+                    <div class="chart-card" style="flex:1; background-color: var(--financial-navy); border-color: rgba(255,255,255,0.1);">
+                        <div class="chart-title" style="color:#fff;">Equity Waterfall</div>
+                        <canvas id="bs-waterfall-equity" style="height:250px;"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cash Flow Statement -->
+        <section class="financial-subpage" id="financial-cash-flow">
+            <div class="financial-page">
+                <button class="financial-back" id="back-to-nav-4">← Back to Navigation</button>
+                <h2 style="color:#fff; font-size:22px; margin-bottom:20px;">Cash Flow Statement</h2>
+                <div class="year-buttons" id="cf-year-buttons"></div>
+                <div class="chart-row">
+                    <div class="chart-card" style="flex:1; background-color: var(--financial-navy); border-color: rgba(255,255,255,0.1);">
+                        <div class="chart-title" style="color:#fff;">Operating Activities</div>
+                        <div class="chart-wrapper">
+                            <table class="financial-table" id="cf-ops-table"></table>
+                        </div>
+                    </div>
+                    <div class="chart-card" style="flex:1; background-color: var(--financial-navy); border-color: rgba(255,255,255,0.1);">
+                        <div class="chart-title" style="color:#fff;">Investing Activities</div>
+                        <div class="chart-wrapper">
+                            <table class="financial-table" id="cf-inv-table"></table>
+                        </div>
+                    </div>
+                    <div class="chart-card" style="flex:1; background-color: var(--financial-navy); border-color: rgba(255,255,255,0.1);">
+                        <div class="chart-title" style="color:#fff;">Financing Activities</div>
+                        <div class="chart-wrapper">
+                            <table class="financial-table" id="cf-fin-table"></table>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-row" id="cf-summary-row"></div>
+                <div class="chart-row" id="cf-donuts"></div>
+            </div>
+        </section>
+
+        <!-- Aged Trial Balance -->
+        <section class="financial-subpage" id="financial-aged-trial">
+            <div class="financial-page">
+                <button class="financial-back" id="back-to-nav-5">← Back to Navigation</button>
+                <h2 style="color:#fff; font-size:22px; margin-bottom:20px;">Aged Trial Balance</h2>
+                <div class="slicer-row">
+                    <div class="slicer">
+                        <h4>Customer</h4>
+                        <select id="atb-customer"><option>All Customers</option><option>Adventure Works</option><option>Contoso Ltd</option><option>Fabrikam Inc</option><option>Northwind Traders</option><option>Proseware LLC</option></select>
+                    </div>
+                </div>
+                <div class="date-slider-container" style="background-color: var(--financial-navy); border-radius:12px; padding:16px; margin-bottom:20px;">
+                    <div class="slider-label"><span>1/1/2017</span><span>12/31/2017</span></div>
+                    <input type="range" class="date-slider" id="atb-date-slider" min="0" max="365" step="1" value="365">
+                </div>
+                <div class="chart-row">
+                    <div class="chart-card" style="flex:1; background-color: var(--financial-navy); border-color: rgba(255,255,255,0.1);">
+                        <div class="chart-title" style="color:#fff;">Aging Summary</div>
+                        <div class="chart-wrapper">
+                            <table class="financial-table" id="atb-summary-table"></table>
+                        </div>
+                    </div>
+                    <div class="chart-card" style="flex:0 0 300px; background-color: var(--financial-navy); border-color: rgba(255,255,255,0.1);">
+                        <div class="chart-title" style="color:#fff;">Aging Buckets</div>
+                        <canvas id="atb-donut" style="height:200px;"></canvas>
+                    </div>
+                </div>
+                <div class="aged-summary" id="atb-summary-cards"></div>
+                <div class="chart-card" style="background-color: var(--financial-navy); border-color: rgba(255,255,255,0.1);">
+                    <div class="chart-title" style="color:#fff;">Customer Aging Matrix</div>
+                    <div class="chart-wrapper">
+                        <div class="aged-matrix" id="atb-matrix"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Revenue Insights -->
+        <section class="financial-subpage" id="financial-revenue-insights">
+            <div class="financial-page">
+                <button class="financial-back" id="back-to-nav-6">← Back to Navigation</button>
+                <h2 style="color:#fff; font-size:22px; margin-bottom:20px;">Revenue Insights</h2>
+                <div class="slicer-row">
+                    <div class="slicer"><h4>Territory</h4><div class="dropdown-slicer" data-slicer="territory"><button type="button" class="slicer-btn">All</button><div class="slicer-dropdown"><div class="slicer-option"><input type="checkbox" value="All" checked> All</div><div class="slicer-option"><input type="checkbox" value="Northwest" checked> Northwest</div><div class="slicer-option"><input type="checkbox" value="Northeast" checked> Northeast</div><div class="slicer-option"><input type="checkbox" value="Southeast" checked> Southeast</div><div class="slicer-option"><input type="checkbox" value="Southwest" checked> Southwest</div><div class="slicer-option"><input type="checkbox" value="International" checked> International</div></div></div></div>
+                    <div class="slicer"><h4>Channel</h4><div class="dropdown-slicer" data-slicer="channel"><button type="button" class="slicer-btn">All</button><div class="slicer-dropdown"><div class="slicer-option"><input type="checkbox" value="All" checked> All</div><div class="slicer-option"><input type="checkbox" value="Online" checked> Online</div><div class="slicer-option"><input type="checkbox" value="Reseller" checked> Reseller</div><div class="slicer-option"><input type="checkbox" value="Direct" checked> Direct</div><div class="slicer-option"><input type="checkbox" value="Partner" checked> Partner</div></div></div></div>
+                    <div class="slicer"><h4>Product Groups</h4><div class="dropdown-slicer" data-slicer="product"><button type="button" class="slicer-btn">All</button><div class="slicer-dropdown"><div class="slicer-option"><input type="checkbox" value="All" checked> All</div><div class="slicer-option"><input type="checkbox" value="Bikes" checked> Bikes</div><div class="slicer-option"><input type="checkbox" value="Components" checked> Components</div><div class="slicer-option"><input type="checkbox" value="Clothing" checked> Clothing</div><div class="slicer-option"><input type="checkbox" value="Accessories" checked> Accessories</div></div></div></div>
+                    <div class="slicer"><h4>Action</h4><button class="btn btn-secondary" style="width:auto; padding:6px 12px; font-size:12px;" id="ri-reset">Reset</button></div>
+                </div>
+                <div class="date-slider-container" style="background-color: var(--financial-navy); border-radius:12px; padding:16px; margin-bottom:20px;">
+                    <div class="slider-label"><span>12/23/2016</span><span id="ri-date-label">2/17/2018</span></div>
+                    <input type="range" class="date-slider" id="ri-date-slider" min="0" max="30" step="1" value="30">
+                </div>
+                <div class="chart-row" id="ri-kpis"></div>
+                <div class="chart-row">
+                    <div class="chart-card" style="flex:1; background-color: var(--financial-navy); border-color: rgba(255,255,255,0.1);">
+                        <div class="chart-title" style="color:#fff;">Total Sales / Previous Highest / Rolling Average</div>
+                        <canvas id="ri-line-chart" style="height:250px;"></canvas>
+                    </div>
+                    <div class="chart-card" style="flex:0 0 300px; background-color: var(--financial-navy); border-color: rgba(255,255,255,0.1);">
+                        <div class="chart-title" style="color:#fff;">Sales Waterfall by Month</div>
+                        <canvas id="ri-waterfall" style="height:250px;"></canvas>
+                    </div>
+                </div>
+                <div class="chart-row">
+                    <div class="chart-card" style="flex:1; background-color: var(--financial-navy); border-color: rgba(255,255,255,0.1);">
+                        <div class="chart-title" style="color:#fff;">Top 5 Customers</div>
+                        <canvas id="ri-top5-customers" style="height:250px;"></canvas>
+                    </div>
+                    <div class="chart-card" style="flex:1; background-color: var(--financial-navy); border-color: rgba(255,255,255,0.1);">
+                        <div class="chart-title" style="color:#fff;">Top 5 Cities</div>
+                        <canvas id="ri-top5-cities" style="height:250px;"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card" style="background-color: var(--financial-navy); border-color: rgba(255,255,255,0.1);">
+                    <div class="chart-title" style="color:#fff;">Transactions</div>
+                    <div class="chart-wrapper">
+                        <table class="financial-table" id="ri-transactions"></table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div> <!-- /page-container -->
+</div> <!-- /app-container -->
+
+<!-- Manual tooltip CSS (inline in HTML for visibility) -->
+<style>
+.manual-tooltip {
+  position: absolute;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 12px;
+  color: var(--text-primary);
+  pointer-events: none;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  display: none;
+  max-width: 240px;
+}
+.manual-tooltip .tooltip-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+.manual-tooltip .tooltip-label {
+  color: var(--text-secondary);
+}
+.manual-tooltip .tooltip-value {
+  font-weight: 600;
+  color: var(--accent-cyan);
+}
+.manual-tooltip.show {
+  display: block;
+}
+</style>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

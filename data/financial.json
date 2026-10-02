@@ -1,0 +1,370 @@
+{
+  "years": [2015, 2016, 2017, 2018],
+  "selectedYear": 2017,
+  "theme": "#0f3a5a",
+  "incomeStatement": {
+    "years": {
+      "2015": {
+        "revenues": [
+          {"label": "Distributor", "value": 16240.80},
+          {"label": "Export", "value": 7680.45},
+          {"label": "Wholesale", "value": 29100.50}
+        ],
+        "cogs": [
+          {"label": "Commissions", "value": 1560.00},
+          {"label": "Equipment", "value": 890.50},
+          {"label": "Labor Burden", "value": 2240.30},
+          {"label": "Materials", "value": 3820.75},
+          {"label": "Other Costs", "value": 1200.00},
+          {"label": "Prize Fund", "value": 540.20},
+          {"label": "Referral Fund", "value": 760.00},
+          {"label": "Repair Fund", "value": 420.80},
+          {"label": "Subcontractors", "value": 1180.40}
+        ],
+        "expenses": [
+          {"label": "Depreciation", "value": 2100.00},
+          {"label": "Education", "value": 320.50},
+          {"label": "Insurance", "value": 450.00},
+          {"label": "Advertising", "value": 3800.00},
+          {"label": "Professional Fees", "value": 1500.00},
+          {"label": "Research & Development", "value": 2200.00},
+          {"label": "Salaries & Wages", "value": 8500.00},
+          {"label": "Utilities", "value": 980.00},
+          {"label": "Rent", "value": 1800.00},
+          {"label": "Office Supplies", "value": 420.00}
+        ],
+        "totalRevenues": 53021.75,
+        "totalCOGS": 15572.55,
+        "grossProfit": 37449.20,
+        "grossProfitPct": 70.62,
+        "totalExpenses": 21570.50,
+        "netIncome": 15878.70
+      },
+      "2016": {
+        "revenues": [
+          {"label": "Distributor", "value": 16810.00},
+          {"label": "Export", "value": 7920.00},
+          {"label": "Wholesale", "value": 30050.00}
+        ],
+        "cogs": [
+          {"label": "Commissions", "value": 1620.00},
+          {"label": "Equipment", "value": 910.00},
+          {"label": "Labor Burden", "value": 2310.00},
+          {"label": "Materials", "value": 3930.00},
+          {"label": "Other Costs", "value": 1240.00},
+          {"label": "Prize Fund", "value": 560.00},
+          {"label": "Referral Fund", "value": 790.00},
+          {"label": "Repair Fund", "value": 440.00},
+          {"label": "Subcontractors", "value": 1220.00}
+        ],
+        "expenses": [
+          {"label": "Depreciation", "value": 2200.00},
+          {"label": "Education", "value": 340.00},
+          {"label": "Insurance", "value": 470.00},
+          {"label": "Advertising", "value": 3950.00},
+          {"label": "Professional Fees", "value": 1550.00},
+          {"label": "Research & Development", "value": 2350.00},
+          {"label": "Salaries & Wages", "value": 8800.00},
+          {"label": "Utilities", "value": 1020.00},
+          {"label": "Rent", "value": 1880.00},
+          {"label": "Office Supplies", "value": 440.00}
+        ],
+        "totalRevenues": 54780.00,
+        "totalCOGS": 16020.00,
+        "grossProfit": 38760.00,
+        "grossProfitPct": 70.74,
+        "totalExpenses": 22360.00,
+        "netIncome": 16400.00
+      },
+      "2017": {
+        "revenues": [
+          {"label": "Distributor", "value": 17373.59},
+          {"label": "Export", "value": 8190.97},
+          {"label": "Wholesale", "value": 31002.15}
+        ],
+        "cogs": [
+          {"label": "Commissions", "value": 1800.00},
+          {"label": "Equipment", "value": 950.00},
+          {"label": "Labor Burden", "value": 2520.00},
+          {"label": "Materials", "value": 4120.00},
+          {"label": "Other Costs", "value": 1320.00},
+          {"label": "Prize Fund", "value": 620.00},
+          {"label": "Referral Fund", "value": 850.00},
+          {"label": "Repair Fund", "value": 480.00},
+          {"label": "Subcontractors", "value": 1340.00}
+        ],
+        "expenses": [
+          {"label": "Depreciation", "value": 2400.00},
+          {"label": "Education", "value": 360.00},
+          {"label": "Insurance", "value": 500.00},
+          {"label": "Advertising", "value": 4200.00},
+          {"label": "Professional Fees", "value": 1650.00},
+          {"label": "Research & Development", "value": 2500.00},
+          {"label": "Salaries & Wages", "value": 9200.00},
+          {"label": "Utilities", "value": 1080.00},
+          {"label": "Rent", "value": 1950.00},
+          {"label": "Office Supplies", "value": 460.00}
+        ],
+        "totalRevenues": 56566.71,
+        "totalCOGS": 16409.45,
+        "grossProfit": 40157.26,
+        "grossProfitPct": 70.99,
+        "totalExpenses": 23490.00,
+        "netIncome": 16667.26
+      },
+      "2018": {
+        "revenues": [
+          {"label": "Distributor", "value": 17920.00},
+          {"label": "Export", "value": 8470.00},
+          {"label": "Wholesale", "value": 32250.00}
+        ],
+        "cogs": [
+          {"label": "Commissions", "value": 1890.00},
+          {"label": "Equipment", "value": 980.00},
+          {"label": "Labor Burden", "value": 2650.00},
+          {"label": "Materials", "value": 4300.00},
+          {"label": "Other Costs", "value": 1380.00},
+          {"label": "Prize Fund", "value": 650.00},
+          {"label": "Referral Fund", "value": 900.00},
+          {"label": "Repair Fund", "value": 500.00},
+          {"label": "Subcontractors", "value": 1400.00}
+        ],
+        "expenses": [
+          {"label": "Depreciation", "value": 2550.00},
+          {"label": "Education", "value": 380.00},
+          {"label": "Insurance", "value": 530.00},
+          {"label": "Advertising", "value": 4450.00},
+          {"label": "Professional Fees", "value": 1720.00},
+          {"label": "Research & Development", "value": 2620.00},
+          {"label": "Salaries & Wages", "value": 9500.00},
+          {"label": "Utilities", "value": 1130.00},
+          {"label": "Rent", "value": 2020.00},
+          {"label": "Office Supplies", "value": 480.00}
+        ],
+        "totalRevenues": 58640.00,
+        "totalCOGS": 17070.00,
+        "grossProfit": 41570.00,
+        "grossProfitPct": 70.87,
+        "totalExpenses": 24430.00,
+        "netIncome": 17140.00
+      }
+    },
+    "waterfall": {
+      "title": "Income Statement Waterfall",
+      "bars": [
+        {"label": "Total Revenues", "value": 56566.71},
+        {"label": "Other Expenses", "value": -11000},
+        {"label": "COGS", "value": -16409.45},
+        {"label": "Total", "value": 29157.26}
+      ]
+    },
+    "monthlyRevenue": {
+      "title": "Monthly Revenue by Channel",
+      "months": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+      "channels": [
+        {"label": "Distributor", "color": "#5bbcc4", "data": [1448, 1420, 1520, 1480, 1560, 1490, 1530, 1550, 1480, 1510, 1580, 1600]},
+        {"label": "Export", "color": "#1fd1c8", "data": [683, 660, 700, 690, 710, 680, 700, 720, 690, 710, 730, 740]},
+        {"label": "Wholesale", "color": "#94a3b8", "data": [2584, 2550, 2680, 2600, 2700, 2650, 2700, 2750, 2620, 2680, 2750, 2780]}
+      ]
+    },
+    "tyVsPy": {
+      "title": "TY vs PY %",
+      "data": [
+        {"label": "Distributor", "ty": 7.4, "py": 0, "color": "#5bbcc4"},
+        {"label": "Export", "ty": 6.3, "py": 0, "color": "#5bbcc4"},
+        {"label": "Wholesale", "ty": 7.1, "py": 0, "color": "#5bbcc4"},
+        {"label": "Net Income", "ty": 5.5, "py": 0, "color": "#5bbcc4"}
+      ]
+    }
+  },
+  "financialDetails": {
+    "views": ["Actuals", "vs Last Year", "% to Revenue"],
+    "selectedView": "Actuals",
+    "quarters": ["Q1", "Q2", "Q3", "Q4", "Annual Total"],
+    "matrixRows": [
+      {"label": "Distributor", "q1": 4343, "q2": 4215, "q3": 4450, "q4": 4366},
+      {"label": "Export", "q1": 2048, "q2": 1980, "q3": 2100, "q4": 2063},
+      {"label": "Wholesale", "q1": 7750, "q2": 7550, "q3": 7850, "q4": 7852},
+      {"label": "Total Revenues", "q1": 14141, "q2": 13745, "q3": 14400, "q4": 14281},
+      {"label": "Commissions", "q1": 450, "q2": 440, "q3": 460, "q4": 450},
+      {"label": "Materials", "q1": 1030, "q2": 1010, "q3": 1050, "q4": 1030},
+      {"label": "Labor Burden", "q1": 630, "q2": 620, "q3": 640, "q4": 630},
+      {"label": "Total COGS", "q1": 4060, "q2": 3970, "q3": 4130, "q4": 4249},
+      {"label": "Total Gross Profit", "q1": 10081, "q2": 9775, "q3": 10270, "q4": 10032},
+      {"label": "Advertising", "q1": 1050, "q2": 1020, "q3": 1080, "q4": 1050},
+      {"label": "Salaries & Wages", "q1": 2300, "q2": 2250, "q3": 2350, "q4": 2300},
+      {"label": "Depreciation", "q1": 600, "q2": 590, "q3": 610, "q4": 600},
+      {"label": "Total Expenses", "q1": 5875, "q2": 5770, "q3": 6050, "q4": 5795},
+      {"label": "Net Income", "q1": 4206, "q2": 4005, "q3": 4220, "q4": 4237}
+    ],
+    "monthlyCharts": [
+      {"title": "Revenue by Channel", "type": "column", "data": [1448, 1420, 1520, 1480, 1560, 1490, 1530, 1550, 1480, 1510, 1580, 1600]},
+      {"title": "COGS by Category", "type": "column", "data": [450, 440, 460, 450, 470, 430, 460, 480, 440, 470, 460, 490]},
+      {"title": "Net Income", "type": "column", "data": [4206, 3800, 4100, 3950, 4300, 4000, 4250, 4400, 4100, 4250, 4350, 4500]}
+    ]
+  },
+  "balanceSheet": {
+    "assetRows": [
+      {"label": "Cash", "v2015": 11500, "v2016": 11750, "v2017": 11875, "v2018": 12100},
+      {"label": "Accounts Receivable", "v2015": 4100, "v2016": 4150, "v2017": 4216, "v2018": 4300},
+      {"label": "Inventory", "v2015": 2050, "v2016": 2100, "v2017": 2146, "v2018": 2200},
+      {"label": "Prepaid Expenses", "v2015": 850, "v2016": 880, "v2017": 900, "v2018": 920},
+      {"label": "Other Current Assets", "v2015": 500, "v2016": 520, "v2017": 550, "v2018": 580},
+      {"label": "Total Current Assets", "v2015": 19000, "v2016": 19370, "v2017": 19687, "v2018": 20100},
+      {"label": "Property, Plant & Equipment", "v2015": 12000, "v2016": 12500, "v2017": 12800, "v2018": 13200},
+      {"label": "Less: Accumulated Depreciation", "v2015": -3500, "v2016": -4000, "v2017": -4300, "v2018": -4600},
+      {"label": "Net Fixed Assets", "v2015": 8500, "v2016": 8500, "v2017": 8500, "v2018": 8600},
+      {"label": "Long-term Investments", "v2015": 3500, "v2016": 3800, "v2017": 3900, "v2018": 4000},
+      {"label": "Other Long-term Assets", "v2015": 2000, "v2016": 2100, "v2017": 2200, "v2018": 2300},
+      {"label": "Total Assets", "v2015": 33000, "v2016": 33770, "v2017": 35287, "v2018": 35000}
+    ],
+    "liabilityEquityRows": [
+      {"label": "Accounts Payable", "v2015": 4500, "v2016": 4600, "v2017": 4800, "v2018": 4900},
+      {"label": "Short-term Debt", "v2015": 3200, "v2016": 3100, "v2017": 1000, "v2018": 900},
+      {"label": "Current Portion of Long-term Debt", "v2015": 1500, "v2016": 1400, "v2017": 1300, "v2018": 1200},
+      {"label": "Total Current Liabilities", "v2015": 9200, "v2016": 9100, "v2017": 7100, "v2018": 7000},
+      {"label": "Long-term Debt", "v2015": 13000, "v2016": 12800, "v2017": 13000, "v2018": 12700},
+      {"label": "Other Long-term Liabilities", "v2015": 1500, "v2016": 1600, "v2017": 1700, "v2018": 1800},
+      {"label": "Total Liabilities", "v2015": 23700, "v2016": 23500, "v2017": 21800, "v2018": 21500},
+      {"label": "Common Stock", "v2015": 5000, "v2016": 5000, "v2017": 5000, "v2018": 5000},
+      {"label": "Retained Earnings", "v2015": 4300, "v2016": 5270, "v2017": 8487, "v2018": 8500},
+      {"label": "Total Shareholders Equity", "v2015": 9300, "v2016": 10270, "v2017": 13487, "v2018": 13500},
+      {"label": "Total Liabilities & Equity", "v2015": 33000, "v2016": 33770, "v2017": 35287, "v2018": 35000}
+    ],
+    "ratios": [
+      {"label": "Debt Ratio", "v2015": 0.72, "v2016": 0.70, "v2017": 0.62, "v2018": 0.61},
+      {"label": "Current Ratio", "v2015": 2.07, "v2016": 2.13, "v2017": 2.77, "v2018": 2.87},
+      {"label": "Working Capital", "v2015": 9800, "v2016": 10270, "v2017": 12587, "v2018": 13100},
+      {"label": "Assets-to-Equity", "v2015": 3.55, "v2016": 3.30, "v2017": 2.61, "v2018": 2.59},
+      {"label": "Debt-to-Equity", "v2015": 2.55, "v2016": 2.30, "v2017": 1.61, "v2018": 1.59}
+    ],
+    "waterfalls": [
+      {"title": "Assets Waterfall", "bars": [{"label": "Starting", "value": 19000}, {"label": "Add", "value": 8500}, {"label": "Less Depreciation", "value": -4300}, {"label": "Investments", "value": 3900}, {"label": "Other Assets", "value": 2200}, {"label": "Total Assets", "value": 35287}]},
+      {"title": "Equity Waterfall", "bars": [{"label": "Starting", "value": 9300}, {"label": "Net Income", "value": 16667}, {"label": "Dividends", "value": -6580}, {"label": "Other", "value": 370}, {"label": "Total Equity", "value": 13487}]}
+    ]
+  },
+  "cashFlow": {
+    "sections": [
+      {
+        "title": "Net Cash from Operations",
+        "years": {
+          "2015": 170085,
+          "2016": 195000,
+          "2017": 230000,
+          "2018": 258678
+        }
+      },
+      {
+        "title": "Net Cash from Investing",
+        "years": {
+          "2015": -45000,
+          "2016": -48000,
+          "2017": -52000,
+          "2018": -55000
+        }
+      },
+      {
+        "title": "Net Cash from Financing",
+        "years": {
+          "2015": -120000,
+          "2016": -140000,
+          "2017": -165000,
+          "2018": -180000
+        }
+      }
+    ],
+    "summary": [
+      {"label": "Net Cash IN", "v2015": 170085, "v2016": 195000, "v2017": 230000, "v2018": 258678, "color": "#5bbcc4"},
+      {"label": "Net Cash OUT", "v2015": -287000, "v2016": -326000, "v2017": -382000, "v2018": -415000, "color": "#e74c38"},
+      {"label": "Net Change", "v2015": -116915, "v2016": -131000, "v2017": -152000, "v2018": -156322, "color": "#ffd93d"}
+    ],
+    "donutPairs": [
+      {"title": "Cash IN / Cash OUT", "in": {"label": "Cash IN", "value": 230000, "color": "#5bbcc4"}, "out": {"label": "Cash OUT", "value": 382000, "color": "#e74c38"}},
+      {"title": "Operating IN / Operating OUT", "in": {"label": "Operating IN", "value": 180000, "color": "#5bbcc4"}, "out": {"label": "Operating OUT", "value": 50000, "color": "#e74c38"}},
+      {"title": "Investing IN / Investing OUT", "in": {"label": "Investing IN", "value": 15000, "color": "#5bbcc4"}, "out": {"label": "Investing OUT", "value": 67000, "color": "#e74c38"}}
+    ]
+  },
+  "agedTrial": {
+    "buckets": [
+      {"label": "Age 1-30", "value": 907111, "color": "#5bbcc4"},
+      {"label": "Age 31-60", "value": 600416, "color": "#1fd1c8"},
+      {"label": "Age 61-90", "value": 560321, "color": "#ffd93d"},
+      {"label": "Age 90+", "value": 2460051, "color": "#e74c38"}
+    ],
+    "summary": [
+      {"label": "OUTSTANDING INVOICES", "value": 751},
+      {"label": "INVOICES VALUE", "value": 4510899, "format": "currency", "suffix": "M"}
+    ],
+    "customers": [
+      {"key": "CUST001", "name": "Adventure Works", "total": 125000, "b1_30": 98000, "b31_60": 27000, "b61_90": 0, "b90": 0},
+      {"key": "CUST002", "name": "Contoso Ltd", "total": 87500, "b1_30": 32500, "b31_60": 28000, "b61_90": 19000, "b90": 8000},
+      {"key": "CUST003", "name": "Fabrikam Inc", "total": 43200, "b1_30": 15200, "b31_60": 14000, "b61_90": 8000, "b90": 6000},
+      {"key": "CUST004", "name": "Northwind Traders", "total": 65300, "b1_30": 22000, "b31_60": 18000, "b61_90": 12000, "b90": 13300},
+      {"key": "CUST005", "name": "Proseware LLC", "total": 199800, "b1_30": 50000, "b31_60": 45000, "b61_90": 50000, "b90": 54800},
+      {"key": "CUST006", "name": "Wingtip Toys", "total": 32700, "b1_30": 18000, "b31_60": 8000, "b61_90": 4000, "b90": 2700},
+      {"key": "CUST007", "name": "Litware Inc", "total": 28600, "b1_30": 9000, "b31_60": 7500, "b61_90": 6800, "b90": 5300}
+    ],
+    "dateRange": {"start": "1/1/2017", "end": "12/31/2017"}
+  },
+  "revenueInsights": {
+    "kpis": [
+      {"label": "SALES", "value": 3000000, "format": "currency", "suffix": "M"},
+      {"label": "PROFITS", "value": 1100000, "format": "currency", "suffix": "M"},
+      {"label": "MARGINS", "value": 36, "format": "percent", "suffix": "%"}
+    ],
+    "slicers": {
+      "territory": ["All", "Northwest", "Northeast", "Southeast", "Southwest", "International"],
+      "channel": ["All", "Online", "Reseller", "Direct", "Partner"],
+      "productGroups": ["All", "Bikes", "Components", "Clothing", "Accessories"]
+    },
+    "dateRange": {"start": "12/23/2016", "end": "2/17/2018"},
+    "lineChart": {
+      "title": "Total Sales / Previous Highest / Rolling Average",
+      "series": [
+        {"label": "Total Sales", "color": "#5bbcc4", "data": [240000, 250000, 245000, 260000, 255000, 270000, 265000, 280000, 275000, 290000, 285000, 300000]},
+        {"label": "Previous Highest Sale", "color": "#94a3b8", "data": [240000, 240000, 245000, 245000, 250000, 250000, 260000, 260000, 270000, 275000, 280000, 300000]},
+        {"label": "Rolling Average", "color": "#1fd1c8", "data": [238000, 242000, 245000, 249000, 252000, 257000, 260000, 264000, 268000, 272000, 276000, 280000]}
+      ],
+      "months": ["Dec 16", "Jan 17", "Feb 17", "Mar 17", "Apr 17", "May 17", "Jun 17", "Jul 17", "Aug 17", "Sep 17", "Oct 17", "Nov 17"]
+    },
+    "waterfall": {
+      "title": "Sales by Month",
+      "bars": [
+        {"label": "Starting", "value": 240000},
+        {"label": "Jan", "value": 10000},
+        {"label": "Feb", "value": -5000},
+        {"label": "Mar", "value": 15000},
+        {"label": "Apr", "value": 5000},
+        {"label": "May", "value": 15000},
+        {"label": "Jun", "value": -5000},
+        {"label": "Jul", "value": 15000},
+        {"label": "Aug", "value": 5000},
+        {"label": "Sep", "value": 15000},
+        {"label": "Oct", "value": -5000},
+        {"label": "Nov", "value": 15000},
+        {"label": "Total", "value": 300000}
+      ]
+    },
+    "transactions": [
+      {"date": "2/17/2018", "city": "Seattle", "territory": "Northwest", "product": "AWC Logo Cap", "customers": "Mr. Maurice Shan, Mrs. Janet Munoz", "sales": 35882, "profits": 5200, "margin": "14.5%"},
+      {"date": "2/16/2018", "city": "Portland", "territory": "Northwest", "product": "Fender Set", "customers": "Mrs. Lisa Cai", "sales": 87041, "profits": 12500, "margin": "14.4%"},
+      {"date": "2/15/2018", "city": "Redmond", "territory": "Northwest", "product": "Helmet", "customers": "Mr. Jordan Turner", "sales": 73444, "profits": 10600, "margin": "14.4%"},
+      {"date": "2/14/2018", "city": "Spokane", "territory": "Northwest", "product": "Tire Tube", "customers": "Mr. Larry Munoz, Mrs. Lacey Zheng", "sales": 17265, "profits": 2500, "margin": "14.5%"},
+      {"date": "2/13/2018", "city": "Seattle", "territory": "Northwest", "product": "Water Bottle", "customers": "Mrs. Ariana Gray", "sales": 39755, "profits": 5700, "margin": "14.4%"}
+    ],
+    "top5Customers": [
+      {"label": "Mr. Maurice Shan", "value": 12406, "color": "#5bbcc4"},
+      {"label": "Mrs. Janet Munoz", "value": 12015, "color": "#1fd1c8"},
+      {"label": "Mrs. Lisa Cai", "value": 11330, "color": "#94a3b8"},
+      {"label": "Mrs. Lacey Zheng", "value": 11086, "color": "#5bbcc4"},
+      {"label": "Mr. Jordan Turner", "value": 11022, "color": "#1fd1c8"}
+    ],
+    "top5Cities": [
+      {"label": "Seattle", "value": 87000, "color": "#5bbcc4"},
+      {"label": "Portland", "value": 76000, "color": "#1fd1c8"},
+      {"label": "Redmond", "value": 65000, "color": "#94a3b8"},
+      {"label": "Spokane", "value": 54000, "color": "#5bbcc4"},
+      {"label": "Tacoma", "value": 42000, "color": "#1fd1c8"}
+    ]
+  }
+}

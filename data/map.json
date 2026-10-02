@@ -1,0 +1,18 @@
+{
+  "title": "Map Visualization",
+  "bubbleColor": "#5bbcc4",
+  "countries": [
+    {"name": "United States", "lat": 39.8283, "lng": -98.5795, "revenue": 12500000, "size": 45},
+    {"name": "Australia", "lat": -25.2744, "lng": 133.7751, "revenue": 6200000, "size": 32},
+    {"name": "Canada", "lat": 56.1321, "lng": -106.3468, "revenue": 2400000, "size": 22},
+    {"name": "United Kingdom", "lat": 55.3781, "lng": -3.4360, "revenue": 1900000, "size": 18},
+    {"name": "France", "lat": 46.2276, "lng": 2.2137, "revenue": 800000, "size": 12},
+    {"name": "Germany", "lat": 51.1657, "lng": 10.4515, "revenue": 450000, "size": 10}
+  ],
+  "regionFilters": ["Select all", "Europe", "North America", "Pacific"],
+  "regions": {
+    "Europe": ["United Kingdom", "France", "Germany"],
+    "North America": ["United States", "Canada"],
+    "Pacific": ["Australia"]
+  }
+}

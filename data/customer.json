@@ -1,0 +1,55 @@
+{
+  "title": "Customer Dashboard",
+  "kpis": [
+    {"value": "17.2K", "label": "Customer"},
+    {"value": "$1,074", "label": "Revenue Per Customer"}
+  ],
+  "incomeDonut": {
+    "title": "Orders by Income",
+    "colors": ["#5bbcc4", "#ffd93d", "#94a3b8"],
+    "data": [
+      {"label": "High", "value": 2450},
+      {"label": "Average", "value": 10450},
+      {"label": "Low", "value": 9210}
+    ]
+  },
+  "occupationDonut": {
+    "title": "Orders by Occupation",
+    "colors": ["#5bbcc4", "#ffd93d", "#94a3b8"],
+    "data": [
+      {"label": "Management", "value": 3890},
+      {"label": "Professional", "value": 7140},
+      {"label": "Skilled Manual", "value": 5340}
+    ]
+  },
+  "revenuePerCustomer": {
+    "title": "Revenue Per Customer Trend",
+    "dateRange": "Jan 2021 - Apr 2022",
+    "months": [
+      {"month": "2021-01", "value": 1020},
+      {"month": "2021-02", "value": 1050},
+      {"month": "2021-03", "value": 1080},
+      {"month": "2021-04", "value": 1090},
+      {"month": "2021-05", "value": 1110},
+      {"month": "2021-06", "value": 1085},
+      {"month": "2021-07", "value": 1450},
+      {"month": "2021-08", "value": 1120},
+      {"month": "2021-09", "value": 1140},
+      {"month": "2021-10", "value": 1160},
+      {"month": "2021-11", "value": 1180},
+      {"month": "2021-12", "value": 1200},
+      {"month": "2022-01", "value": 1220},
+      {"month": "2022-02", "value": 1240},
+      {"month": "2022-03", "value": 1260},
+      {"month": "2022-04", "value": 1280}
+    ]
+  },
+  "topCustomer": {
+    "name": "Mr. Maurice Shan",
+    "revenue": "12.4K",
+    "orders": 6,
+    "customerKey": 11433
+  },
+  "yearRange": {"min": 2021, "max": 2022, "default": [2021, 2022]},
+  "tableColumns": ["Customer Key", "Name", "Total Order", "Revenue"]
+}

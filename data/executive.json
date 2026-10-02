@@ -1,0 +1,104 @@
+{
+  "kpis": {
+    "revenue": { "value": 24900000, "label": "Revenue", "format": "currency", "suffix": "M" },
+    "profits": { "value": 10500000, "label": "Profits", "format": "currency", "suffix": "M" },
+    "orders": { "value": 25200, "label": "Orders", "format": "number", "suffix": "K" },
+    "returnRate": { "value": 2.2, "label": "Return Rate", "format": "percent", "suffix": "%" }
+  },
+  "revenueTrending": {
+    "title": "Revenue Trending",
+    "yMax": 2000000,
+    "yLabel": "$0 - $2.0M",
+    "months": [
+      {"month": "2020-01", "value": 520000},
+      {"month": "2020-02", "value": 580000},
+      {"month": "2020-03", "value": 620000},
+      {"month": "2020-04", "value": 590000},
+      {"month": "2020-05", "value": 680000},
+      {"month": "2020-06", "value": 720000},
+      {"month": "2020-07", "value": 690000},
+      {"month": "2020-08", "value": 750000},
+      {"month": "2020-09", "value": 820000},
+      {"month": "2020-10", "value": 880000},
+      {"month": "2020-11", "value": 950000},
+      {"month": "2020-12", "value": 1050000},
+      {"month": "2021-01", "value": 1150000},
+      {"month": "2021-02", "value": 1180000},
+      {"month": "2021-03", "value": 1250000},
+      {"month": "2021-04", "value": 1300000},
+      {"month": "2021-05", "value": 1350000},
+      {"month": "2021-06", "value": 1420000},
+      {"month": "2021-07", "value": 1480000},
+      {"month": "2021-08", "value": 1520000},
+      {"month": "2021-09", "value": 1580000},
+      {"month": "2021-10", "value": 1620000},
+      {"month": "2021-11", "value": 1680000},
+      {"month": "2021-12", "value": 1750000},
+      {"month": "2022-01", "value": 1780000},
+      {"month": "2022-02", "value": 1820000},
+      {"month": "2022-03", "value": 1850000},
+      {"month": "2022-04", "value": 1880000},
+      {"month": "2022-05", "value": 1830000},
+      {"month": "2022-06", "value": 1780000}
+    ]
+  },
+  "categoryOrders": {
+    "title": "Order by Category",
+    "data": [
+      {"category": "Accessories", "orders": 17000},
+      {"category": "Bikes", "orders": 13900},
+      {"category": "Clothing", "orders": 7000}
+    ]
+  },
+  "top10Products": {
+    "title": "Top 10 Products",
+    "columns": ["Product", "Orders", "Revenue", "Return %"],
+    "data": [
+      {"product": "AWC Logo Cap", "orders": 2062, "revenue": 35882, "returnPct": 1.11},
+      {"product": "Fender Set - Mountain", "orders": 1975, "revenue": 87041, "returnPct": 1.36},
+      {"product": "Mountain Bottle Cage", "orders": 1896, "revenue": 38062, "returnPct": 2.02},
+      {"product": "Mountain Tire Tube", "orders": 2846, "revenue": 28533, "returnPct": 1.64},
+      {"product": "Patch Kit/8 Patches", "orders": 2952, "revenue": 13506, "returnPct": 1.61},
+      {"product": "Road Tire Tube", "orders": 2173, "revenue": 17265, "returnPct": 1.55},
+      {"product": "Sport-100 Helmet, Black", "orders": 1940, "revenue": 65270, "returnPct": 2.69},
+      {"product": "Sport-100 Helmet, Blue", "orders": 1995, "revenue": 67120, "returnPct": 3.21},
+      {"product": "Sport-100 Helmet, Red", "orders": 2099, "revenue": 73444, "returnPct": 3.35},
+      {"product": "Water Bottle - 30 oz.", "orders": 3983, "revenue": 39755, "returnPct": 1.95}
+    ]
+  },
+  "monthlyKpiCards": {
+    "cards": [
+      {
+        "title": "Monthly Revenue",
+        "value": "$1.83M",
+        "prevValue": "$1.77M",
+        "change": "+3.31%",
+        "trend": "up",
+        "sparkline": [1720000, 1750000, 1770000, 1780000, 1800000, 1830000],
+        "sparklineColor": "#38a174"
+      },
+      {
+        "title": "Monthly Orders",
+        "value": "2,146",
+        "prevValue": "2,165",
+        "change": "-0.88%",
+        "trend": "down",
+        "sparkline": [2180, 2170, 2165, 2155, 2150, 2146],
+        "sparklineColor": "#e74c38"
+      },
+      {
+        "title": "Monthly Returns",
+        "value": "166",
+        "prevValue": "169",
+        "change": "+1.78%",
+        "trend": "up",
+        "sparkline": [169, 168, 170, 168, 167, 166],
+        "sparklineColor": "#38a174"
+      }
+    ]
+  },
+  "productTypeCards": {
+    "mostOrdered": {"title": "Most Ordered Product Type", "value": "Tires and Tubes"},
+    "mostReturned": {"title": "Most Returned Product Type", "value": "Shorts"}
+  }
+}
