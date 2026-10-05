@@ -307,7 +307,9 @@ function setupFinancialNavigation() {
         tilesContainer.addEventListener('click', (e) => {
             const tile = e.target.closest('.financial-tile');
             if (!tile) return;
-            const subpageId = tile.dataset.subpage;
+            const sp = tile.dataset.subpage;
+            const subpageId = document.getElementById(sp)
+                ? sp : (document.getElementById('financial-' + sp) ? 'financial-' + sp : sp);
             switchFinancialSubpage(subpageId);
         });
     }
