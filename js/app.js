@@ -1272,23 +1272,25 @@ function renderSubcategoryChart() {
                 x: { grid: { color: '#3d3d3d', display: false }, ticks: { display: false } },
                 y: { grid: { display: false }, ticks: { color: '#999', font: { size: 12 } } }
             },
-            onHover: function(evt, elements) {
-                if (!elements.length) return;
+            onHover: function(evt, elements, chart) {
+                if (!chart || !elements || !elements.length) return;
                 const idx = elements[0].index;
                 const item = d[idx];
-                showManualTooltip(evt, item);
+                showManualTooltip(chart, evt, item);
             }
         }
     });
     ctx.style.height = '250px';
 }
 
-function showManualTooltip(evt, item) {
+function showManualTooltip(chart, evt, item) {
     const tooltip = $('manual-tooltip');
-    if (!tooltip || !evt) return;
-    const rect = evt.target.getBoundingClientRect();
-    const mouseX = evt.clientX;
-    const mouseY = evt.clientY;
+    const canvas = chart && chart.canvas;
+    if (!tooltip || !canvas || !evt) return;
+    const rect = canvas.getBoundingClientRect();
+    const pointer = evt.native || evt;
+    const mouseX = pointer.clientX != null ? pointer.clientX : evt.x;
+    const mouseY = pointer.clientY != null ? pointer.clientY : evt.y;
     tooltip.style.left = (mouseX + 16) + 'px';
     tooltip.style.top = (mouseY + 16) + 'px';
     tooltip.classList.add('show');
